@@ -6,25 +6,35 @@ Interactive Jupyter notebooks demonstrating cyecca library usage for estimation,
 
 ## Setup
 
-### Option 1: Standalone (Ubuntu 24.04+)
-```bash
-# Run script creates venv and installs dependencies automatically
-# This installs cyecca from PyPI
-./run_notebooks.sh
-```
+### Option 1: VS Code (Recommended)
+1. Install the [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions
+2. Open any `.ipynb` file in VS Code
+3. Select the Python kernel when prompted
+4. VS Code will prompt to install dependencies - click "Install" or manually run:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### Option 2: With ROS 2 (use workspace cyecca)
+**With ROS workspace:**
+- Source your ROS workspace before opening VS Code to use the workspace version of cyecca:
+  ```bash
+  source /path/to/ros_ws/install/setup.bash
+  code .
+  ```
+
+### Option 2: Jupyter Lab (Automated)
 ```bash
-# Source ROS workspace with cyecca first
+# Standalone - installs cyecca from PyPI
+./scripts/run_notebooks.sh
+
+# With ROS 2 - uses workspace cyecca
 source /path/to/ros_ws/install/setup.bash
-
-# Run notebooks (ROS cyecca takes precedence over PyPI version)
-./run_notebooks.sh
+./scripts/run_notebooks.sh
 ```
 
-### Manual Setup (if needed)
+### Option 3: Manual Setup
 ```bash
-# Create virtual environment
+# Create virtual environment (Ubuntu 24.04+)
 python3 -m venv venv
 source venv/bin/activate
 
@@ -37,9 +47,9 @@ jupyter lab
 
 ## Notes
 
-- If you source a ROS workspace before running, Python will use the cyecca version from ROS (via PYTHONPATH)
-- Otherwise, cyecca is installed from PyPI into the venv
-- This allows development with local ROS changes while keeping standalone usage simple
+- **VS Code**: Python path from ROS workspace (if sourced) takes precedence
+- **Ubuntu 24.04+**: Use `python3 -m venv venv` for isolated environment if needed
+- Most users can just open notebooks in VS Code and install dependencies when prompted
 
 ## Contents
 
