@@ -1,6 +1,6 @@
 # Cyecca Notebooks
 
-[![Test Notebooks](https://github.com/jgoppert/cyecca_notebooks/actions/workflows/test-notebooks.yml/badge.svg)](https://github.com/jgoppert/cyecca_notebooks/actions/workflows/test-notebooks.yml)
+[![Test Notebooks](https://github.com/cognipilot/cyecca_notebooks/actions/workflows/test-notebooks.yml/badge.svg)](https://github.com/cognipilot/cyecca_notebooks/actions/workflows/test-notebooks.yml)
 
 Interactive Jupyter notebooks demonstrating cyecca library usage for estimation, control, and path planning.
 
