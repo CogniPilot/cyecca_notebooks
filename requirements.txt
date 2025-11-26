@@ -1,0 +1,22 @@
+# Cyecca Notebooks Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core dependency
+# Note: If using ROS workspace, source it before running to use that version
+# Otherwise this will install from PyPI
+cyecca>=0.2.7
+
+# Notebook environment
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+
+# Visualization
+matplotlib>=3.8.0
+
+# Scientific computing (usually already installed with cyecca)
+numpy>=1.26.0
+scipy>=1.11.0
+
+# Optional: for notebook testing
+nbmake>=1.4.0
+pytest>=7.4.0
