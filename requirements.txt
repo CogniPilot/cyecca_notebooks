@@ -5,6 +5,8 @@
 # Note: If using ROS workspace, source it before running to use that version
 # Otherwise this will install from PyPI
 cyecca>=0.2.7
+beartype>=0.22.6
+sympy>=1.14.0
 
 # Notebook environment
 jupyter>=1.0.0
@@ -16,6 +18,7 @@ matplotlib>=3.8.0
 # Scientific computing (usually already installed with cyecca)
 numpy>=1.26.0
 scipy>=1.11.0
+casadi>=3.6.0
 
 # Optional: for notebook testing
 nbmake>=1.4.0

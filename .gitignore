@@ -30,3 +30,6 @@ Thumbs.db
 .pytest_cache/
 htmlcov/
 .coverage
+
+.env
+venv_ros/

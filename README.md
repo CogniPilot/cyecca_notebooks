@@ -16,11 +16,16 @@ Interactive Jupyter notebooks demonstrating cyecca library usage for estimation,
    ```
 
 **With ROS workspace:**
-- Source your ROS workspace before opening VS Code to use the workspace version of cyecca:
-  ```bash
-  source /path/to/ros_ws/install/setup.bash
-  code .
-  ```
+1. Run the kernel setup script (creates venv_ros, installs dependencies, and configures the kernel):
+   ```bash
+   ./scripts/setup_kernel.sh
+   ```
+
+2. In VS Code, open a notebook and select the kernel:
+   - Click on the kernel name in the top right corner of the notebook
+   - Select "Cyecca (ROS)" from the list
+
+3. The notebook will now use the cyecca version from your ROS workspace at `../../install/`
 
 ### Option 2: Jupyter Lab (Automated)
 ```bash
