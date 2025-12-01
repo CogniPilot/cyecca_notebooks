@@ -65,13 +65,34 @@ AMENT_PREFIX_PATH=${AMENT_PREFIX_PATH}
 LD_LIBRARY_PATH=${LD_LIBRARY_PATH}
 EOF
 
+# Generate VS Code settings with extraPaths for Pylance
+echo "Generating VS Code settings for Pylance..."
+mkdir -p "${PROJECT_ROOT}/.vscode"
+
+# Convert PYTHONPATH to JSON array for extraPaths
+EXTRA_PATHS_JSON=$(echo "$PYTHONPATH" | tr ':' '\n' | while read -r path; do
+    echo "        \"$path\""
+done | paste -sd ',' | sed 's/,/,\n/g')
+
+cat > "${PROJECT_ROOT}/.vscode/settings.json" << EOF
+{
+    "python.terminal.activateEnvironment": true,
+    "jupyter.notebookFileRoot": "\${workspaceFolder}",
+    "python.defaultInterpreterPath": "\${workspaceFolder}/venv_ros/bin/python",
+    "python.envFile": "\${workspaceFolder}/.env",
+    "python.analysis.extraPaths": [
+$EXTRA_PATHS_JSON
+    ]
+}
+EOF
+
 echo ""
 echo "✓ Kernel 'cyecca_ros' installed successfully!"
-echo "✓ Pylance environment configured in .env"
+echo "✓ Pylance environment configured in .vscode/settings.json"
 echo ""
 echo "Next steps:"
 echo "1. If VS Code is open, reload the window: Ctrl+Shift+P → 'Developer: Reload Window'"
 echo "2. Open a notebook and click the kernel name in the top right corner"
-echo "3. Select Kernel -> Jupyter Kernel -> Cyecca (ROS)
+echo "3. Select Kernel -> Jupyter Kernel -> Cyecca (ROS)"
 echo ""
 echo "The notebook will now use cyecca from: ${PROJECT_ROOT}/../../install/cyecca"

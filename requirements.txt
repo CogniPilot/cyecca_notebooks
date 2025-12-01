@@ -4,22 +4,22 @@
 # Core dependency
 # Note: If using ROS workspace, source it before running to use that version
 # Otherwise this will install from PyPI
-cyecca>=0.2.7
-beartype>=0.22.6
-sympy>=1.14.0
+cyecca
+beartype
+sympy
 
 # Notebook environment
-jupyter>=1.0.0
-jupyterlab>=4.0.0
+jupyter
+jupyterlab
 
 # Visualization
-matplotlib>=3.8.0
+matplotlib
 
 # Scientific computing (usually already installed with cyecca)
-numpy>=1.26.0
-scipy>=1.11.0
-casadi>=3.6.0
+numpy
+scipy
+casadi
 
 # Optional: for notebook testing
-nbmake>=1.4.0
-pytest>=7.4.0
+nbmake
+pytest
